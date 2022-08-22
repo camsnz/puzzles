@@ -1,7 +1,7 @@
 import unittest
 from ContainsDuplicate import Leet
 
-containsDuplicate = Leet.containsDuplicateRaw
+containsDuplicate = Leet.containsDuplicateIndex
 class TestSum(unittest.TestCase):
 
     def test_dupe_eg1(self):

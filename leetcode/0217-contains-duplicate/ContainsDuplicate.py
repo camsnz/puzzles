@@ -2,6 +2,7 @@ from ast import List
 
 # import sys, types, array
 class Leet:
+
     def containsDuplicateRaw(nums) -> bool:
         length = len(nums)
         for i, num in enumerate(nums):
@@ -10,6 +11,15 @@ class Leet:
             for n in nums[i+1:length]:
                 if num == n:
                     return True
+        return False
+
+    def containsDuplicateIndex(nums) -> bool:
+        for i, num in enumerate(nums):
+            try:
+                nums.index(num, i+1)
+                return True
+            except ValueError:
+                None
         return False
 
     def containsDuplicateViaDict(nums) -> bool:
