@@ -5,15 +5,18 @@
 # Output: [[0,1,3],[0,2,3]]
 # Explanation: There are two paths: 0 -> 1 -> 3 and 0 -> 2 -> 3.
 
-from ast import List
+from typing import List
 
 
 class Solution:
 
-    def filterOut(node, visited):
+    def filterOut(self, node: List[List[int]], visited:List[int]):
         return [i for i in node if i not in visited]
 
     def visit(self, graph, idx=0, visited=[]):
+        if not graph or not graph[0]:
+            return [] # bad graph: [[],[whatever..]]. First node goes nowhere.
+
         visited = visited.copy()
         visited.append(idx)
         if idx == len(graph)-1:
